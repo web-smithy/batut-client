@@ -1,0 +1,60 @@
+body {
+  font-family: $noto-japanese;
+  color: $white;
+}
+
+.main {
+  flex-grow: 1;
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    background-color: $dark-gray;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  &-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-column--center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.title {
+  &-h1 {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 93px;
+  }
+
+  &-h2 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 70px;
+  }
+}
+
+.txt {
+  &--orange {
+    color: orange;
+  }
+
+  &--white {
+    color: $white;
+  }
+}

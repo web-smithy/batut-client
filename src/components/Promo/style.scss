@@ -1,0 +1,14 @@
+.promo {
+  padding-top: 150px;
+  &-title {
+    margin-bottom: 20px;
+  }
+
+  &-img__right {
+    width: 350px;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

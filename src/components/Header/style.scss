@@ -1,0 +1,16 @@
+@import  "../../styles/var";
+
+.header {
+  &-wrap {
+    padding-top: 20px;
+  }
+}
+
+.menu-list {
+  &__item{
+    margin-left: 20px;
+    &-link {
+      color: $white;
+    }
+  }
+}
