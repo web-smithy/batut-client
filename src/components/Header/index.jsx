@@ -1,6 +1,7 @@
 import "./style.scss";
 import Logo from "../Logo";
 import store from "../../../store.json";
+import logout from "../../assets/img/icon/logout.svg";
 
 function Header() {
   const renderItemMenu = (item) => {
@@ -25,6 +26,9 @@ function Header() {
           <nav className="nav">
             <ul className="menu-list flex">{store.menu.map(renderItemMenu)}</ul>
           </nav>
+          <button>
+            <img src={logout}></img>
+          </button>
         </div>
       </div>
     </header>

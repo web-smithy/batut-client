@@ -9,7 +9,18 @@ $melon-white: #FECEA8;
 $yellow-white: #FF847C;
 $orange: #F8A917;
 $dark-gray: #18222D;
+$gradient-txt: linear-gradient(90.13deg, $chestnut 0.84%, $orange 99.96%);
 
 // fonts
 $roboto: 'Roboto', sans-serif;
 $noto-japanese: 'Noto Sans JP', sans-serif;
+
+// media
+$gd-col: 12;
+$gd-size: calc(100% / $gd-col);
+$gutter: 15px;
+//$extra-small: < 576px;
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$extra-large: 1200px;

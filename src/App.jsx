@@ -1,8 +1,10 @@
 import "./styles/main.scss";
+import { useState } from "react";
 import Home from "./views/Home";
 
 function App() {
-  return <Home />;
+  const [user, setUser] = useState(null);
+  return <Home setUser={setUser} user={user} />;
 }
 
 export default App;

@@ -1,12 +1,12 @@
 import Header from "../../components/Header";
 import Promo from "../../components/Promo";
 
-function Home() {
+function Home({ user, setUser }) {
   return (
     <div className="main-wrapper">
       <Header />
       <main className="main">
-        <Promo />
+        <Promo user={user} setUser={setUser} />
       </main>
     </div>
   );

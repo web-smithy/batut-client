@@ -20,6 +20,15 @@ body {
   margin: 0 auto;
 }
 
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.column {
+	padding: $gutter;
+}
+
 .flex {
   display: flex;
   &-between {
@@ -56,5 +65,12 @@ body {
 
   &--white {
     color: $white;
+  }
+
+  &--gradient {
+    background: $gradient-txt;
+    background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
   }
 }

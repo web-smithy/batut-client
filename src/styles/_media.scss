@@ -1,0 +1,7 @@
+@media (max-width: $extra-large) {
+  @for $i from 1 through $gd-col {
+    .col-xl-#{$i} {
+      @include col-size($gd-size * $i);
+    }
+  }
+}
