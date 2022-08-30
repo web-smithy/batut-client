@@ -1,4 +1,6 @@
 .features {
+  padding: 40px 0;
+  background-color: $mercury;
   color: $dark-gray;
   &-list {
     display: flex;
@@ -23,6 +25,17 @@
       background-color: $gray;
       box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.15);
     }
+  }
+
+  &-title {
+    margin-bottom: 25px;
+  }
+
+  &-txt {
+    font-family: $roboto;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
   }
 
   h3 {
