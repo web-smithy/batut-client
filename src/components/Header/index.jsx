@@ -6,6 +6,7 @@ import store from "../../../store.json";
 import logout from "../../assets/img/icon/logout.svg";
 import { Link } from "react-router-dom";
 import { removeUser } from "../helper";
+import Logout from "../Logout";
 
 function Header() {
   const { user, setUser } = useContext(ContextUser);
@@ -13,7 +14,7 @@ function Header() {
   const renderItemMenu = (item) => {
     return (
       <li className="menu-list__item">
-        <a className="menu-list__item-link underline-one" href="#">
+        <a className="menu-list__item-link underline-one" href="#services">
           {item}
         </a>
       </li>
@@ -30,25 +31,14 @@ function Header() {
       <div className="container">
         <div className="header-wrap flex-between">
           <div className="logo-wrap">
-            <a href="/">
+            <Link to={"/"}>
               <Logo />
-            </a>
+            </Link>
           </div>
           <nav className="nav">
             <ul className="menu-list flex">{store.menu.map(renderItemMenu)}</ul>
           </nav>
-          {user ? (
-            <div className="logout">
-              <Link className="profile-link" to="/profile">
-                Profile
-              </Link>
-              <button className="logout-btn" onClick={handelLogout}>
-                <img className="logout-btn__img" src={logout}></img>
-              </button>
-            </div>
-          ) : (
-            ""
-          )}
+          {user ? <Logout /> : ""}
         </div>
       </div>
     </header>

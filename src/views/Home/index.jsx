@@ -1,6 +1,7 @@
 import Header from "../../components/Header";
 import Promo from "../../components/Promo";
-import Features from "../../components/Features";
+import Services from "../../components/Services";
+import Banner from "../../components/Banner";
 
 function Home() {
   return (
@@ -9,9 +10,10 @@ function Home() {
         <Header />
         <main className="main">
           <Promo />
+          <Banner />
         </main>
       </div>
-      <Features />
+      <Services />
     </>
   );
 }

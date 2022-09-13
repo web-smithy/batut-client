@@ -36,17 +36,3 @@
     }
   }
 }
-
-.logout {
-  display: flex;
-  align-items: center;
-}
-
-.profile-link {
-  color: $pumpkin;
-  margin-right: 10px;
-  transition: .3s ease;
-  &:hover {
-    transform: scale(1.2);
-  }
-}

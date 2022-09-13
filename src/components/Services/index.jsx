@@ -6,8 +6,8 @@ import prize from "../../assets/img/icon/prize.png";
 import target from "../../assets/img/icon/target.png";
 import task from "../../assets/img/icon/task.png";
 
-function Features() {
-  const featuresItemInfo = [
+function Services() {
+  const servicesItemInfo = [
     {
       icon: clock,
       title: "Get a notification",
@@ -20,7 +20,7 @@ function Features() {
     },
     {
       icon: chart,
-      title: "Track chellenges",
+      title: "Track challenges",
       text: "Keep track of the statistics of each challenges and get closer to its completion",
     },
     {
@@ -36,29 +36,29 @@ function Features() {
     {
       icon: task,
       title: "Choose the best challenge for you",
-      text: "Choose from the existing list of chellenges and start doing it right now.",
+      text: "Choose from the existing list of challenges and start doing it right now.",
     },
   ];
 
   return (
-    <section className="features">
+    <section className="services" id="services">
       <div className="container">
-        <h2 className="title-h2 features-title">Features</h2>
-        <p className="features-txt">
-          Lorem ipsum dolor sit amet consectetur
-          <span className="txt--gradient">adipisicing elit.</span> Incidunt,
-          ipsam.
+        <h2 className="title-h2 services-title">Services</h2>
+        <p className="services-txt">
+          Our application provides a
+          <span className="txt--gradient"> range of services </span>
+          for each chellenges.
         </p>
-        <div className="features-list m-15">
-          {featuresItemInfo.map((item) => {
+        <div className="services-list m-15">
+          {servicesItemInfo.map((item) => {
             return (
               <div className="column col-xl-4 col-l-6 col-s-12">
-                <div className="features-list__item">
-                  <div className="features-list__img">
+                <div className="services-list__item">
+                  <div className="services-list__img">
                     <img src={item.icon} />
                   </div>
                   <h3>{item.title}</h3>
-                  <p className="features-list__txt">{item.text}</p>
+                  <p className="services-list__txt">{item.text}</p>
                 </div>
               </div>
             );
@@ -69,4 +69,4 @@ function Features() {
   );
 }
 
-export default Features;
+export default Services;

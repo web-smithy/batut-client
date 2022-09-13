@@ -1,4 +1,4 @@
-.features {
+.services {
   padding: 40px 0;
   background-color: $mercury;
   color: $dark-gray;
@@ -8,7 +8,7 @@
     &__item {
       max-width: 300px;
       height: 250px;
-      padding: 30px 20px;
+      padding: 25px 20px;
       color: $white;
       background-color: $dark-gray;
       border-radius: 10px;
@@ -27,6 +27,7 @@
 
     &__txt {
       font-family: $roboto;
+      font-size: 16px;
       line-height: 20px;
     }
   }
@@ -44,7 +45,7 @@
 
   h3 {
     font-family: $noto-japanese;
-    font-size: 22px;
+    font-size: 19px;
     font-weight: 600;
     margin-bottom: 20px;
   }
