@@ -9,31 +9,37 @@ import task from "../../assets/img/icon/task.png";
 function Services() {
   const servicesItemInfo = [
     {
+      id: 1,
       icon: clock,
       title: "Get a notification",
       text: "You'll receive notifications to help you achieve your goals.",
     },
     {
+      id: 2,
       icon: add,
       title: "Create own challenges",
       text: "You can create any challenge anywhere.",
     },
     {
+      id: 3,
       icon: chart,
       title: "Track challenges",
       text: "Keep track of the statistics of each challenges and get closer to its completion",
     },
     {
+      id: 4,
       icon: prize,
       title: "Get rewards",
       text: "Get rewarded for completing challenges that will help you complete them to the end.",
     },
     {
+      id: 5,
       icon: target,
       title: "Set yourself challenges",
       text: "Create your ideal life with life changing habits and be the best version of yourself!",
     },
     {
+      id: 6,
       icon: task,
       title: "Choose the best challenge for you",
       text: "Choose from the existing list of challenges and start doing it right now.",
@@ -52,7 +58,7 @@ function Services() {
         <div className="services-list m-15">
           {servicesItemInfo.map((item) => {
             return (
-              <div className="column col-xl-4 col-l-6 col-s-12">
+              <div key={item.id} className="column col-xl-4 col-l-6 col-s-12">
                 <div className="services-list__item">
                   <div className="services-list__img">
                     <img src={item.icon} />

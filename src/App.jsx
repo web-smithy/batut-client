@@ -3,6 +3,7 @@ import { Routes, Route, HashRouter } from "react-router-dom";
 import { ContextUser } from "./components/store/context";
 import Home from "./views/Home";
 import Profile from "./views/Profile";
+import ErrorPage from "./views/Error";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </HashRouter>
     </ContextUser.Provider>

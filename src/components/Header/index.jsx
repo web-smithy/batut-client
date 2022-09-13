@@ -9,10 +9,10 @@ import Logout from "../Logout";
 function Header() {
   const { user, setUser } = useContext(ContextUser);
 
-  const renderItemMenu = (item) => {
+  const renderItemMenu = (item, i) => {
     return (
-      <li className="menu-list__item">
-        <a className="menu-list__item-link underline-one" href="#services">
+      <li key={i} className="menu-list__item">
+        <a className="menu-list__item-link underline-one" to="/">
           {item}
         </a>
       </li>
