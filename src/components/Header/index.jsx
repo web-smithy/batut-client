@@ -1,11 +1,9 @@
 import "./style.scss";
-import React, { useContext } from "react";
-import { ContextUser } from "../store/context";
 import Logo from "../Logo";
 import store from "../../../store.json";
-import logout from "../../assets/img/icon/logout.svg";
 import { Link } from "react-router-dom";
-import { removeUser } from "../helper";
+import React, { useContext } from "react";
+import { ContextUser } from "../store/context";
 import Logout from "../Logout";
 
 function Header() {
@@ -19,11 +17,6 @@ function Header() {
         </a>
       </li>
     );
-  };
-
-  const handelLogout = () => {
-    removeUser();
-    setUser(null);
   };
 
   return (
