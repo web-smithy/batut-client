@@ -4,10 +4,9 @@
   color: $dark-gray;
   &-list {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     &__item {
-      width: 300px;
+      max-width: 300px;
       height: 250px;
       padding: 30px 20px;
       color: $white;
@@ -25,6 +24,11 @@
       background-color: $gray;
       box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.15);
     }
+
+    &__txt {
+      font-family: $roboto;
+      line-height: 20px;
+    }
   }
 
   &-title {
@@ -39,8 +43,11 @@
   }
 
   h3 {
+    font-family: $noto-japanese;
+    font-size: 22px;
+    font-weight: 600;
     margin-bottom: 20px;
-    font-weight:700 ;
   }
 }
 
+@import "./media.scss";

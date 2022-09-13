@@ -10,33 +10,33 @@ function Features() {
   const featuresItemInfo = [
     {
       icon: clock,
-      title: "Lorem, ipsum dolor.",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.Deleniti.",
+      title: "Get a notification",
+      text: "You'll receive notifications to help you achieve your goals.",
     },
     {
       icon: add,
-      title: "Lorem, ipsum dolor.",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.Deleniti.",
+      title: "Create own challenges",
+      text: "You can create any challenge anywhere.",
     },
     {
       icon: chart,
-      title: "Lorem, ipsum dolor.",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.Deleniti.",
+      title: "Track chellenges",
+      text: "Keep track of the statistics of each challenges and get closer to its completion",
     },
     {
       icon: prize,
-      title: "Lorem, ipsum dolor.",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.Deleniti.",
+      title: "Get rewards",
+      text: "Get rewarded for completing challenges that will help you complete them to the end.",
     },
     {
       icon: target,
-      title: "Lorem, ipsum dolor.",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.Deleniti.",
+      title: "Set yourself challenges",
+      text: "Create your ideal life with life changing habits and be the best version of yourself!",
     },
     {
       icon: task,
-      title: "Lorem, ipsum dolor.",
-      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.Deleniti.",
+      title: "Choose the best challenge for you",
+      text: "Choose from the existing list of chellenges and start doing it right now.",
     },
   ];
 
@@ -49,16 +49,16 @@ function Features() {
           <span className="txt--gradient">adipisicing elit.</span> Incidunt,
           ipsam.
         </p>
-        <div className="features-list">
+        <div className="features-list m-15">
           {featuresItemInfo.map((item) => {
             return (
-              <div>
+              <div className="column col-xl-4 col-l-6 col-s-12">
                 <div className="features-list__item">
                   <div className="features-list__img">
                     <img src={item.icon} />
                   </div>
                   <h3>{item.title}</h3>
-                  <p>{item.text}</p>
+                  <p className="features-list__txt">{item.text}</p>
                 </div>
               </div>
             );

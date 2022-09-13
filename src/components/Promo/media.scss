@@ -1,0 +1,64 @@
+@media (max-width: $extra-large) {
+  .promo {
+    &-img {
+      &__left {
+        width: 260px;
+        height: 250px;
+        bottom: 46px;
+      }
+
+      &__right {
+        width: 312px;
+        height: 219px;
+        bottom: 41px;
+      }
+    }
+  }
+
+  .banner {
+    padding-top: 135px;
+  }
+}
+
+@media (max-width: $medium) {
+  .logo-wrap {
+    svg {
+      width: 150px;
+    }
+  }
+
+  .promo {
+    padding-top: 125px;
+    &-img {
+      &__left {
+        visibility: hidden;
+      }
+
+      &__right {
+        position: static;
+        margin-top: 20px;
+        align-self: flex-end;
+      }
+    }
+  }
+
+  .banner {
+    padding-top: 35px;
+  }
+}
+
+@media (max-width: $extra-small) {
+  .logo-wrap {
+    svg {
+      width: 90px;
+    }
+  }
+
+  .menu {
+    &-list {
+      &__item {
+        font-size: 14px;
+      }
+    }
+  }
+}

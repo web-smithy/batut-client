@@ -1,0 +1,9 @@
+@media (max-width: $large) {
+  .features {
+    &-list {
+      &__item {
+        max-width: 100%;
+      }
+    }
+  }
+}
