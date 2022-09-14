@@ -1,3 +1,13 @@
+@keyframes move {
+  from {
+    transform: translate(-90px, 0%);
+  }
+
+  to {
+    transform: translate(90px, 0%);
+  }
+}
+
 .banner {
   padding-top: 104px;
 }

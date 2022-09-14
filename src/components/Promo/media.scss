@@ -1,16 +1,18 @@
-@media (max-width: $extra-large) {
+@media (max-width: $large) {
   .promo {
     &-img {
       &__left {
         width: 260px;
-        height: 250px;
+        height: 220px;
         bottom: 46px;
+        left: 42px;
       }
 
       &__right {
         width: 312px;
         height: 219px;
-        bottom: 41px;
+        bottom: 31px;
+        right: 0;
       }
     }
   }

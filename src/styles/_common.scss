@@ -18,9 +18,11 @@ body {
 }
 
 .container {
-  max-width: 1020px;
-  padding: 0 15px;
-  margin: 0 auto;
+  @include container-size(1020px, 0 15px);
+}
+
+.container-large {
+  @include container-size(1200px, 0 15px);
 }
 
 .row {
@@ -53,15 +55,21 @@ body {
 
 .title {
   &-h1 {
-    font-weight: 700;
     font-size: 64px;
     line-height: 93px;
+    font-weight: 700;
   }
 
   &-h2 {
-    font-weight: 700;
     font-size: 48px;
     line-height: 70px;
+    font-weight: 700;
+  }
+
+  &-h3 {
+    font-size: 40px;
+    line-height: 58px;
+    font-weight: 700;
   }
 }
 

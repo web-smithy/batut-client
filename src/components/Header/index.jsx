@@ -6,7 +6,7 @@ import React, { useContext } from "react";
 import { ContextUser } from "../store/context";
 import Logout from "../Logout";
 
-function Header() {
+function Header({ isMenuShown = false }) {
   const { user, setUser } = useContext(ContextUser);
 
   const renderItemMenu = (item, i) => {
@@ -28,9 +28,16 @@ function Header() {
               <Logo />
             </Link>
           </div>
-          <nav className="nav">
-            <ul className="menu-list flex">{store.menu.map(renderItemMenu)}</ul>
-          </nav>
+          {isMenuShown ? (
+            <nav className="nav">
+              <ul className="menu-list flex">
+                {store.menu.map(renderItemMenu)}
+              </ul>
+            </nav>
+          ) : (
+            ""
+          )}
+
           {user ? <Logout /> : ""}
         </div>
       </div>

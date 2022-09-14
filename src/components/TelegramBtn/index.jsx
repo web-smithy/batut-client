@@ -6,6 +6,7 @@ function TelegramBtn({ setUser }) {
     addUserName(user);
     setUser(user);
   };
+
   return (
     <TelegramLoginButton botName="batutnik_bot" dataOnauth={handelLogin} />
   );

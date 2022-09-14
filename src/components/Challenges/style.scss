@@ -1,0 +1,23 @@
+.challenges {
+  &-item {
+    padding: 10px 30px;
+    background-color: $apricot-peach;
+    border-radius: 30px;
+    &__title {
+      margin-bottom: 5px;
+    }
+
+    &__wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__txt {
+      font-family: $roboto;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 400;
+    }
+  }
+}

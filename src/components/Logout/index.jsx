@@ -9,6 +9,7 @@ function Logout() {
   const { user, setUser } = useContext(ContextUser);
 
   const handelLogout = () => {
+    // need to add navigate
     removeUser();
     setUser(null);
   };

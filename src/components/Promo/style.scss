@@ -8,26 +8,16 @@
     width: 350px;
     height: 250px;
     position: absolute;
-    bottom: 80px;
-    right: 0;
+    bottom: 0;
+    right: 20px;
   }
 
   &-img__left {
     width: 350px;
-    height: 250px;
+    height: 220px;
     position: absolute;
-    left: 15px;
-    bottom: 85px;
-  }
-}
-
-@keyframes move {
-  from {
-    transform: translate(-90px, 0%);
-  }
-
-  to {
-    transform: translate(90px, 0%);
+    left: -19px;
+    bottom: 56px;
   }
 }
 
