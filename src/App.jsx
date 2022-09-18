@@ -11,7 +11,6 @@ function App() {
 
   useEffect(() => {
     const currentUser = getUser();
-    // console.log("app", currentUser);
     if (currentUser) {
       setUser(currentUser);
     }

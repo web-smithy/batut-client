@@ -1,8 +1,25 @@
 .challenges {
+  padding-bottom: 40px;
+  &-title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &-txt {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
   &-item {
-    padding: 10px 30px;
-    background-color: $apricot-peach;
-    border-radius: 30px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all .4s ease;
+    &:hover .challenges-item__title{
+      transform: translateX(30px);
+      transition: all .6s ease;
+    }
+
     &__title {
       margin-bottom: 5px;
     }
@@ -18,6 +35,25 @@
       font-size: 14px;
       line-height: 16px;
       font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    &__img {
+      span {
+        font-size: 55px;
+        line-height: 89px;
+      }
+    }
+
+    &__info {
+      &-time {
+        display: flex;
+        gap: 20px;
+      }
+
+      &-icon {
+        margin-right: 10px;
+      }
     }
   }
 }

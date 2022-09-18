@@ -1,15 +1,16 @@
 import "./style.scss";
-import { Link } from "react-router-dom";
-import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
 import { ContextUser } from "../store/context";
 import logout from "../../assets/img/icon/logout.svg";
 import { removeUser } from "../helper";
 
 function Logout() {
+  let navigate = useNavigate();
   const { user, setUser } = useContext(ContextUser);
 
   const handelLogout = () => {
-    // need to add navigate
+    navigate("/");
     removeUser();
     setUser(null);
   };

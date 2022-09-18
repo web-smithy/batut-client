@@ -1,32 +1,63 @@
+import { useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { ContextUser } from "../../components/store/context";
 import Header from "../../components/Header";
 import Challenges from "../../components/Challenges";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import React, { useContext } from "react";
-import { ContextUser } from "../../components/store/context";
+import User from "../../components/User";
+import Modal from "../../components/Modal";
+import Acceptances from "../../components/Acceptances";
 
 function Profile() {
   let navigate = useNavigate();
   const { user, setUser } = useContext(ContextUser);
+  const [challenges, setChallenges] = useState([]);
+  const [selectedChallenge, setSelectedChallenge] = useState(null);
+  const [acceptances, setAcceptances] = useState([]);
+  const tgToken = new URLSearchParams(user).toString();
 
   useEffect(() => {
-    console.log("profile", user);
     if (!user) {
       navigate("/");
     }
 
-    fetch("https://api.batut.pp.ua/api/me", {
+    fetch("https://api.batut.pp.ua/api/acceptances", {
       headers: new Headers({
-        "TG-AUTH": new URLSearchParams(user).toString(),
+        "TG-AUTH": tgToken,
       }),
-    }).then((res) => console.log(res));
-    console.log(new URLSearchParams(user).toString());
-  });
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        setAcceptances(json);
+        if (!json.some((acceptance) => acceptance.status === "in_progress")) {
+          fetch("https://api.batut.pp.ua/api/challenges", {
+            headers: new Headers({
+              "TG-AUTH": tgToken,
+            }),
+          })
+            .then((res) => res.json())
+            .then((json) => setChallenges(json));
+        }
+      });
+  }, []);
 
   return (
     <div className="main-wrapper">
+      {selectedChallenge ? (
+        <Modal
+          selectedChallenge={selectedChallenge}
+          setSelectedChallenge={setSelectedChallenge}
+        />
+      ) : null}
       <Header />
-      <Challenges />
+      <User />
+      {acceptances.some((acceptance) => acceptance.status === "in_progress") ? (
+        <Acceptances acceptances={acceptances} style={{ color: "white" }} />
+      ) : (
+        <Challenges
+          challenges={challenges}
+          setSelectedChallenge={setSelectedChallenge}
+        />
+      )}
     </div>
   );
 }
