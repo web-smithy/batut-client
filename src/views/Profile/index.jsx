@@ -38,7 +38,7 @@ function Profile() {
             .then((json) => setChallenges(json));
         }
       });
-  }, []);
+  }, [selectedChallenge]);
 
   return (
     <div className="main-wrapper">
@@ -51,7 +51,7 @@ function Profile() {
       <Header />
       <User />
       {acceptances.some((acceptance) => acceptance.status === "in_progress") ? (
-        <Acceptances acceptances={acceptances} style={{ color: "white" }} />
+        <Acceptances acceptances={acceptances} />
       ) : (
         <Challenges
           challenges={challenges}

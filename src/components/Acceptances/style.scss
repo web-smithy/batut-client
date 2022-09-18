@@ -17,12 +17,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 300px;
+    min-width: 300px;
     padding: 30px 20px;
     background-color: $midnight-green-eagle-green;
     border-radius: 10px;
     &__title {
       margin-bottom: 15px;
+      color: $white;
     }
 
     &__img {
@@ -35,6 +36,7 @@
     &__txt {
       font-family: $roboto;
       margin-bottom: 10px;
+      color: $white;
       text-align: center;
     }
   }

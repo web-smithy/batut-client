@@ -21,7 +21,9 @@ function Modal({ selectedChallenge, setSelectedChallenge }) {
       }
     )
       .then((res) => res.json())
-      .then(() => setSelectedChallenge(null));
+      .then(() => {
+        setSelectedChallenge(null);
+      });
   };
 
   return (
