@@ -1,4 +1,5 @@
 import "./style.scss";
+import { HashLink } from "react-router-hash-link";
 import Logo from "../Logo";
 import store from "../../../store.json";
 import { Link } from "react-router-dom";
@@ -12,9 +13,12 @@ function Header({ isMenuShown = false }) {
   const renderItemMenu = (item, i) => {
     return (
       <li key={i} className="menu-list__item">
-        <a className="menu-list__item-link underline-one" to="/">
+        <HashLink
+          className="menu-list__item-link underline-one"
+          to={`#${item}`}
+        >
           {item}
-        </a>
+        </HashLink>
       </li>
     );
   };

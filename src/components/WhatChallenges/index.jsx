@@ -6,13 +6,13 @@ function WhatChallenges() {
   return (
     <>
       <Wave />
-      <section className="what-challenges">
+      <section className="what-challenges" id="about">
         <div className="container-large">
           <div className="what-challenges__wrap">
-            <div className="what-challenges__img">
+            <div className="what-challenges__img" data-aos="zoom-in-right">
               <img src={bicycle} />
             </div>
-            <ul className="what-challenges__list">
+            <ul className="what-challenges__list" data-aos="zoom-in-left">
               <h3 className="what-challenges__title">
                 What's your challenges?
               </h3>

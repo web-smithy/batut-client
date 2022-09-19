@@ -1,8 +1,15 @@
 import Header from "../../components/Header";
 import Promo from "../../components/Promo";
 import Services from "../../components/Services";
-import Banner from "../../components/Banner";
+import AnimatedWave from "../../components/AnimatedWave";
 import WhatChallenges from "../../components/WhatChallenges";
+import Steps from "../../components/Steps";
+import Footer from "../../components/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init({
+  duration: 1200,
+});
 
 function Home() {
   return (
@@ -11,11 +18,13 @@ function Home() {
         <Header isMenuShown />
         <main className="main">
           <Promo />
-          <Banner />
+          <AnimatedWave />
         </main>
       </div>
       <Services />
       <WhatChallenges />
+      <Steps />
+      <Footer />
     </>
   );
 }

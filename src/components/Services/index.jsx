@@ -58,7 +58,11 @@ function Services() {
         <div className="services-list m-15">
           {servicesItemInfo.map((item) => {
             return (
-              <div key={item.id} className="column col-xl-4 col-l-6 col-s-12">
+              <div
+                key={item.id}
+                data-aos="zoom-in"
+                className="column col-xl-4 col-l-6 col-s-12"
+              >
                 <div className="services-list__item">
                   <div className="services-list__img">
                     <img src={item.icon} />

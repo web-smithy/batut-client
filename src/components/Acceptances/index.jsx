@@ -1,10 +1,9 @@
 import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faBell } from "@fortawesome/free-solid-svg-icons";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { formatTime } from "../helper/moment";
 
 function Acceptances({ acceptances }) {
-  console.log(acceptances);
   const renderAcceptancesItem = (acceptance) => {
     return (
       <div key={acceptance.id} className="acceptances-item">

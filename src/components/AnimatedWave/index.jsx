@@ -1,8 +1,8 @@
 import "./style.scss";
 
-function Banner() {
+function AnimatedWave() {
   return (
-    <div className="banner">
+    <div className="animated-wave">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
@@ -25,4 +25,4 @@ function Banner() {
   );
 }
 
-export default Banner;
+export default AnimatedWave;

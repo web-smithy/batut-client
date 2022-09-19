@@ -1,0 +1,22 @@
+@media (max-width: $medium) {
+  .footer {
+    &-wrap {
+      flex-direction: column;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .footer {
+    &-copyright,
+    &-email {
+      font-size: 13px;
+    }
+  }
+}

@@ -95,3 +95,9 @@ body {
 		-webkit-text-fill-color: transparent;
   }
 }
+
+.wave {
+  &-orange {
+    background-color: $orange;
+  }
+}
