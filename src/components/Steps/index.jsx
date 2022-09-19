@@ -5,7 +5,7 @@ import step_3 from "../../assets/img/step_3.png";
 
 function Steps() {
   return (
-    <section className="steps" id="deatails">
+    <section className="steps" id="details">
       <div className="container">
         <h2 className="title-h2 steps__title">How it works?</h2>
         <div className="steps__wrap">
