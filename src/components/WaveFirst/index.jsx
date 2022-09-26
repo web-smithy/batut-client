@@ -1,6 +1,6 @@
-function Wave() {
+function WaveFirst() {
   return (
-    <div className="wave" style={{ backgroundColor: "#F8A917" }}>
+    <div className="wave-first" style={{ backgroundColor: "#F8A917" }}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 125">
         <path
           fill="#e5e5e5"
@@ -12,4 +12,4 @@ function Wave() {
   );
 }
 
-export default Wave;
+export default WaveFirst;

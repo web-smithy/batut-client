@@ -1,11 +1,11 @@
 import "./style.scss";
 import bicycle from "../../assets/img/bicycle.svg";
-import Wave from "../Wave";
+import WaveFirst from "../WaveFirst";
 
 function WhatChallenges() {
   return (
     <>
-      <Wave />
+      <WaveFirst />
       <section className="what-challenges" id="about">
         <div className="container-large">
           <div className="what-challenges__wrap">
