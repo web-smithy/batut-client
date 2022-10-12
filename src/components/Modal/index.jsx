@@ -12,7 +12,9 @@ function Modal({ selectedChallenge, setSelectedChallenge }) {
 
   const handleAccept = () => {
     fetch(
-      `https://api.batut.pp.ua/api/challenges/${selectedChallenge.id}/acceptances`,
+      `${import.meta.env.VITE_API_URL}/api/challenges/${
+        selectedChallenge.id
+      }/acceptances`,
       {
         method: "POST",
         headers: new Headers({

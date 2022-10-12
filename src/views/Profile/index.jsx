@@ -20,7 +20,7 @@ function Profile() {
       navigate("/");
     }
 
-    fetch("https://api.batut.pp.ua/api/acceptances", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/acceptances`, {
       headers: new Headers({
         "TG-AUTH": tgToken,
       }),
@@ -29,7 +29,7 @@ function Profile() {
       .then((json) => {
         setAcceptances(json);
         if (!json.some((acceptance) => acceptance.status === "in_progress")) {
-          fetch("https://api.batut.pp.ua/api/challenges", {
+          fetch(`${import.meta.env.VITE_API_URL}/api/challenges`, {
             headers: new Headers({
               "TG-AUTH": tgToken,
             }),

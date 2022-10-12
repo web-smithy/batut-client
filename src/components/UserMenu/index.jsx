@@ -1,11 +1,11 @@
 import "./style.scss";
 import { Link, useNavigate } from "react-router-dom";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { ContextUser } from "../store/context";
 import logout from "../../assets/img/icon/logout.svg";
 import { removeUser } from "../helper";
 
-function Logout() {
+function UserMenu({ isUserMenuMedia = false }) {
   let navigate = useNavigate();
   const { user, setUser } = useContext(ContextUser);
 
@@ -16,7 +16,7 @@ function Logout() {
   };
 
   return (
-    <div className="logout">
+    <div className={isUserMenuMedia ? "user-menu d--md" : "user-menu"}>
       <Link className="profile-link" to="/profile">
         Profile
       </Link>
@@ -27,4 +27,4 @@ function Logout() {
   );
 }
 
-export default Logout;
+export default UserMenu;

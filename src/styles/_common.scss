@@ -38,6 +38,20 @@ body {
   margin: -15px;
 }
 
+.d {
+  &--md {
+    display: flex;
+  }
+
+  &--lg {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
 .flex {
   display: flex;
   &-between {

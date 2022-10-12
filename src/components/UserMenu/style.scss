@@ -1,0 +1,22 @@
+.user-menu {
+  display: flex;
+  align-items: center;
+}
+
+.profile-link {
+  font-weight: 600;
+  color: $pumpkin;
+  margin-right: 10px;
+  transition: .4s ease;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.logout-btn__img {
+  color: $orange;
+}
+
+.logout-btn:hover {
+  opacity: 0.7;
+}

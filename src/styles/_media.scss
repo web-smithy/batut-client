@@ -30,6 +30,16 @@
       @include col-size($gd-size * $i);
     }
   }
+
+  .d {
+    &--md {
+      display: none;
+    }
+
+    &--lg {
+      display: block;
+    }
+  }
 }
 
 @media (max-width: $small) {

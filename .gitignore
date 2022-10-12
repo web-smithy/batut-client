@@ -23,3 +23,4 @@ req.http
 *.njsproj
 *.sln
 *.sw?
+.env

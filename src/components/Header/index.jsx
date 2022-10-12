@@ -2,13 +2,15 @@ import "./style.scss";
 import { HashLink } from "react-router-hash-link";
 import Logo from "../Logo";
 import store from "../../../store.json";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import React, { useContext } from "react";
 import { ContextUser } from "../store/context";
-import Logout from "../Logout";
+import UserMenu from "../UserMenu";
+import BurgerMenu from "../BurgerMenu";
 
-function Header({ isMenuShown = false }) {
+function Header() {
   const { user, setUser } = useContext(ContextUser);
+  const location = useLocation();
 
   const renderItemMenu = (item, i) => {
     return (
@@ -28,12 +30,13 @@ function Header({ isMenuShown = false }) {
       <div className="container">
         <div className="header-wrap flex-between">
           <div className="logo-wrap">
-            <Link to={"/"}>
+            <Link className="logo-link" to={"/"}>
               <Logo />
             </Link>
           </div>
-          {isMenuShown ? (
-            <nav className="nav">
+          <BurgerMenu />
+          {location.pathname === "/" ? (
+            <nav className="nav d--md">
               <ul className="menu-list flex">
                 {store.menu.map(renderItemMenu)}
               </ul>
@@ -41,8 +44,7 @@ function Header({ isMenuShown = false }) {
           ) : (
             ""
           )}
-
-          {user ? <Logout /> : ""}
+          {user ? <UserMenu isUserMenuMedia /> : ""}
         </div>
       </div>
     </header>

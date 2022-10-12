@@ -12,7 +12,7 @@ function Steps() {
         <div className="container">
           <h2 className="title-h2 steps__title">How it works?</h2>
           <div className="steps__wrap">
-            <div className="steps__item" data-aos="flip-up">
+            <div className="steps__item" data-aos="zoom-in">
               <div className="steps__item-img">
                 <img src={step_1} />
               </div>
@@ -23,7 +23,7 @@ function Steps() {
                 </p>
               </div>
             </div>
-            <div className="steps__item" data-aos="flip-up">
+            <div className="steps__item" data-aos="zoom-in">
               <div className="steps__item-img">
                 <img src={step_2} />
               </div>
@@ -35,7 +35,7 @@ function Steps() {
                 </p>
               </div>
             </div>
-            <div className="steps__item" data-aos="flip-up">
+            <div className="steps__item" data-aos="zoom-in">
               <div className="steps__item-img">
                 <img src={step_3} />
               </div>

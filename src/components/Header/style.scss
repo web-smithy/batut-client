@@ -1,5 +1,6 @@
 .header {
   &-wrap {
+    flex-wrap: wrap;
     padding-top: 20px;
   }
 }
@@ -35,4 +36,18 @@
       }
     }
   }
+}
+
+.logo {
+  &-link {
+    display: block;
+  }
+
+  &-wrap {
+    margin: 10px 0;
+  }
+}
+
+.opened {
+  display: block;
 }

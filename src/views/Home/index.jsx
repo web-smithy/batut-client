@@ -15,7 +15,7 @@ function Home() {
   return (
     <>
       <div className="main-wrapper">
-        <Header isMenuShown />
+        <Header />
         <main className="main">
           <Promo />
           <AnimatedWave />
