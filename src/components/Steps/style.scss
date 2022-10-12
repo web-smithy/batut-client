@@ -8,6 +8,10 @@
     text-align: center;
   }
 
+  &__wrap {
+    padding: 0 10px;
+  }
+
   &__item{
     display: flex;
     justify-content: space-between;
