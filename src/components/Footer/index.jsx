@@ -13,11 +13,11 @@ function Footer() {
           <div className="footer-wrap">
             <div className="footer-info">
               <div className="footer-telegram">
+                <p className="footer-telegram__txt">Support</p>
                 <FontAwesomeIcon
                   className="footer-telegram__icon"
                   icon={faTelegram}
                 />{" "}
-                <p className="footer-telegram__txt">Support:</p>
                 <a
                   className="footer-telegram__name"
                   href="https://t.me/MarinaKovaleva259"
