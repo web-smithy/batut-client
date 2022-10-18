@@ -7,3 +7,15 @@
   padding: $padding-x;
   margin: $margin-xy;
 }
+
+@mixin menuLink($width, $color) {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  width: $width;
+  height: 2px;
+  background-color: $color;
+  transition: all 0.5s;
+}

@@ -1,7 +1,7 @@
 import "./style.scss";
 import Logo from "../Logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faTelegram } from "@fortawesome/free-brands-svg-icons";
 import WaveThrid from "../WaveThrid";
 
 function Footer() {
@@ -12,16 +12,22 @@ function Footer() {
         <div className="container">
           <div className="footer-wrap">
             <div className="footer-info">
+              <div className="footer-telegram">
+                <FontAwesomeIcon
+                  className="footer-telegram__icon"
+                  icon={faTelegram}
+                />{" "}
+                <p className="footer-telegram__txt">Support:</p>
+                <a
+                  className="footer-telegram__name"
+                  href="https://t.me/MarinaKovaleva259"
+                >
+                  Marina Kovaleva
+                </a>
+              </div>
               <p className="footer-copyright">
                 © Copyright 2022, All Rights Reserved.
               </p>
-              <a className="footer-email" href="mailto: batut@gmail.com">
-                <FontAwesomeIcon
-                  className="footer-email__icon"
-                  icon={faEnvelope}
-                />{" "}
-                batut@gmail.com
-              </a>
             </div>
             <Logo />
           </div>

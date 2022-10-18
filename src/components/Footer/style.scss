@@ -10,14 +10,34 @@
   &-copyright {
     font-size: 15px;
     line-height: 20px;
-    opacity: 0.7;
-    margin-bottom: 10px;
+    opacity: 0.4;
   }
-
-  &-email {
+  
+  &-telegram {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
     color: $white;
     &__icon {
-      margin-right: 10px;
+      width: 25px;
+      height: 25px;
+      margin-right: 5px;
+    }
+
+    &__txt {
+      margin-right: 5px;
+    }
+
+    &__name {
+      position: relative;
+      color: $orange;
+      &::after {
+        @include menuLink(0, $pumpkin)
+      }
+
+      &:hover::after {
+        @include menuLink(100%, $orange)
+      }
     }
   }
 }
