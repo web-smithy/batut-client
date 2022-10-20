@@ -2,6 +2,7 @@ import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { formatTime } from "../helper/moment";
+import Chart from "../Chart";
 
 function Acceptances({ acceptances }) {
   const renderAcceptancesItem = (acceptance) => {
@@ -19,6 +20,7 @@ function Acceptances({ acceptances }) {
           />{" "}
           at {formatTime(acceptance.notify_at)}
         </p>
+        <Chart />
       </div>
     );
   };
