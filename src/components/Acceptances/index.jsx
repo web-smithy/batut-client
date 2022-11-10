@@ -12,6 +12,10 @@ function Acceptances({ acceptances }) {
           <span>{acceptance.emoji}</span>
         </div>
         <h4 className="title-h4 acceptances-item__title">{acceptance.name}</h4>
+        <Chart
+          notifications={acceptance.notifications}
+          days={acceptance.days}
+        />
         <p className="acceptances-item__txt">{acceptance.description}</p>
         <p className="acceptances-item__time">
           <FontAwesomeIcon
@@ -20,10 +24,10 @@ function Acceptances({ acceptances }) {
           />{" "}
           at {formatTime(acceptance.notify_at)}
         </p>
-        <Chart />
       </div>
     );
   };
+
   return (
     <section className="acceptances">
       <div className="container">
