@@ -8,12 +8,17 @@
     border-bottom: 2px solid rgba($color: #FD7423, $alpha: 0.3);
   }
 
+  .title-h4 {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
   &-img {
     position: relative;
     margin-bottom: 10px;
     &__avatar {
-      width: 100px;
-      height: 100px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
     }
   }

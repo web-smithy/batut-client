@@ -2,6 +2,7 @@ import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { formatTime } from "../helper/moment";
+import Chart from "../Chart";
 
 function Acceptances({ acceptances }) {
   const renderAcceptancesItem = (acceptance) => {
@@ -11,6 +12,10 @@ function Acceptances({ acceptances }) {
           <span>{acceptance.emoji}</span>
         </div>
         <h4 className="title-h4 acceptances-item__title">{acceptance.name}</h4>
+        <Chart
+          notifications={acceptance.notifications}
+          days={acceptance.days}
+        />
         <p className="acceptances-item__txt">{acceptance.description}</p>
         <p className="acceptances-item__time">
           <FontAwesomeIcon
@@ -22,6 +27,7 @@ function Acceptances({ acceptances }) {
       </div>
     );
   };
+
   return (
     <section className="acceptances">
       <div className="container">
