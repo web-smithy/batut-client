@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --port 80",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "eslint": "eslint '**/*.js*'"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -18,6 +19,7 @@
     "fontawesome-free": "^1.0.4",
     "moment": "^2.29.4",
     "npm": "^8.18.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",

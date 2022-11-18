@@ -1,6 +1,6 @@
-import "./style.scss";
-import React, { useContext, useEffect, useState } from "react";
-import { ContextUser } from "../../components/store/context";
+import './style.scss';
+import React, { useContext, useEffect, useState } from 'react';
+import ContextUser from '../store/context';
 
 function Modal({ selectedChallenge, setSelectedChallenge }) {
   const { user, setUser } = useContext(ContextUser);
@@ -16,11 +16,11 @@ function Modal({ selectedChallenge, setSelectedChallenge }) {
         selectedChallenge.id
       }/acceptances`,
       {
-        method: "POST",
+        method: 'POST',
         headers: new Headers({
-          "TG-AUTH": tgToken,
+          'TG-AUTH': tgToken,
         }),
-      }
+      },
     )
       .then((res) => res.json())
       .then(() => {
@@ -34,22 +34,30 @@ function Modal({ selectedChallenge, setSelectedChallenge }) {
         <div className="modal_container">
           <h3 className="title-h3 modal-title">Confirmation</h3>
           <p className="modal-txt">
-            Are you sure you want to accept{" "}
-            <span style={{ fontWeight: "700" }}>
+            Are you sure you want to accept
+            {' '}
+            <span style={{ fontWeight: '700' }}>
               {selectedChallenge.name.toLowerCase()}
-            </span>{" "}
+            </span>
+            {' '}
             challenge?
           </p>
           <p className="modal-txt">
-            You will receive notifications for {selectedChallenge.days} days at{" "}
-            {selectedChallenge.notify_at}.
+            You will receive notifications for
+            {' '}
+            {selectedChallenge.days}
+            {' '}
+            days at
+            {' '}
+            {selectedChallenge.notify_at}
+            .
           </p>
         </div>
         <div className="modal-buttons">
-          <button className="btn btn-cancel" onClick={handleCancel}>
+          <button type="button" className="btn btn-cancel" onClick={handleCancel}>
             Cancel
           </button>
-          <button className="btn btn-accept" onClick={handleAccept}>
+          <button type="button" className="btn btn-accept" onClick={handleAccept}>
             Yes, I accept it!
           </button>
         </div>

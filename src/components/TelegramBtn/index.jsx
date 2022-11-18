@@ -1,14 +1,15 @@
-import TelegramLoginButton from "telegram-login-button";
-import { useNavigate } from "react-router-dom";
-import { addUserName } from "../helper";
+import React from 'react';
+import TelegramLoginButton from 'telegram-login-button';
+import { useNavigate } from 'react-router-dom';
+import { addUserName } from '../helper';
 
 function TelegramBtn({ setUser }) {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const handelLogin = (user) => {
     addUserName(user);
     setUser(user);
     if (user) {
-      navigate("/profile");
+      navigate('/profile');
     }
   };
 
