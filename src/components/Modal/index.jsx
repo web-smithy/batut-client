@@ -1,9 +1,10 @@
 import './style.scss';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import ContextUser from '../store/context';
 
 function Modal({ selectedChallenge, setSelectedChallenge }) {
-  const { user, setUser } = useContext(ContextUser);
+  const [user] = useContext(ContextUser);
   const tgToken = new URLSearchParams(user).toString();
 
   const handleCancel = () => {
@@ -65,5 +66,15 @@ function Modal({ selectedChallenge, setSelectedChallenge }) {
     </div>
   );
 }
+
+Modal.propTypes = {
+  selectedChallenge: PropTypes.shape({
+    id: PropTypes.number,
+    days: PropTypes.number,
+    notify_at: PropTypes.string,
+    name: PropTypes.string,
+  }).isRequired,
+  setSelectedChallenge: PropTypes.func.isRequired,
+};
 
 export default Modal;

@@ -4,7 +4,7 @@ import ContextUser from '../store/context';
 import userPlaceholder from '../../assets/img/user_placeholder.png';
 
 function User() {
-  const { user, setUser } = useContext(ContextUser);
+  const [user] = useContext(ContextUser);
   const avatarImg = () => user.photo_url || userPlaceholder;
 
   return (

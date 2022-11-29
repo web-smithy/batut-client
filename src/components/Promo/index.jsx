@@ -6,7 +6,7 @@ import promoRight from '../../assets/img/promo_2.png';
 import TelegramBtn from '../TelegramBtn';
 
 function Promo() {
-  const { user, setUser } = useContext(ContextUser);
+  const [user, setUser] = useContext(ContextUser);
   return (
     <section className="promo">
       <div className="container">

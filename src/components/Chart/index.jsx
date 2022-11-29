@@ -9,11 +9,11 @@ import React, { useState } from 'react';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function Chart({ notifications, days }) {
-  const [daysLeft, setDaysLeft] = useState(days - notifications.length);
+  const [daysLeft] = useState(days - notifications.length);
 
   const getCountByStatus = (status) => {
-    const arrayNotificationStatus = notifications.filter((notification) => notification.status === status);
-    return arrayNotificationStatus.length;
+    const arrayNotifStatus = notifications.filter((notification) => notification.status === status);
+    return arrayNotifStatus.length;
   };
 
   const options = {
@@ -54,5 +54,13 @@ function Chart({ notifications, days }) {
     </div>
   );
 }
+
+Chart.propTypes = {
+  days: PropTypes.number.isRequired,
+  notifications: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    status: PropTypes.string,
+  })).isRequired,
+};
 
 export default Chart;

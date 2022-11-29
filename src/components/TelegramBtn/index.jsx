@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TelegramLoginButton from 'telegram-login-button';
 import { useNavigate } from 'react-router-dom';
 import { addUserName } from '../helper';
@@ -20,5 +21,9 @@ function TelegramBtn({ setUser }) {
     />
   );
 }
+
+TelegramBtn.propTypes = {
+  setUser: PropTypes.func.isRequired,
+};
 
 export default TelegramBtn;

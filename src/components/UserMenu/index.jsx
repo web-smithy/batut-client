@@ -1,4 +1,5 @@
 import './style.scss';
+import PropTypes from 'prop-types';
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useContext } from 'react';
 import ContextUser from '../store/context';
@@ -7,7 +8,7 @@ import { removeUser } from '../helper';
 
 function UserMenu({ isUserMenuMedia = false }) {
   const navigate = useNavigate();
-  const { user, setUser } = useContext(ContextUser);
+  const [setUser] = useContext(ContextUser);
 
   const handelLogout = () => {
     navigate('/');
@@ -26,5 +27,9 @@ function UserMenu({ isUserMenuMedia = false }) {
     </div>
   );
 }
+
+UserMenu.propTypes = {
+  isUserMenuMedia: PropTypes.bool.isRequired,
+};
 
 export default UserMenu;

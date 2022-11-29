@@ -9,7 +9,7 @@ import UserMenu from '../UserMenu';
 import BurgerMenu from '../BurgerMenu';
 
 function Header() {
-  const { user, setUser } = useContext(ContextUser);
+  const [user] = useContext(ContextUser);
   const location = useLocation();
 
   const renderItemMenu = (item, i) => (

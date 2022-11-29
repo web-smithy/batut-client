@@ -9,7 +9,7 @@ import Acceptances from '../../components/Acceptances';
 
 function Profile() {
   const navigate = useNavigate();
-  const { user, setUser } = useContext(ContextUser);
+  const [user] = useContext(ContextUser);
   const [challenges, setChallenges] = useState([]);
   const [selectedChallenge, setSelectedChallenge] = useState(null);
   const [acceptances, setAcceptances] = useState([]);
@@ -34,8 +34,8 @@ function Profile() {
               'TG-AUTH': tgToken,
             }),
           })
-            .then((res) => res.json())
-            .then((json) => setChallenges(json));
+            .then((response) => response.json())
+            .then((res) => setChallenges(res));
         }
       });
   }, [selectedChallenge]);
