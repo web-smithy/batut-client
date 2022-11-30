@@ -7,7 +7,7 @@
     "dev": "vite --port 80",
     "build": "vite build",
     "preview": "vite preview",
-    "eslint": "eslint '**/*.js*'"
+    "eslint": "eslint . --ext js --ext jsx"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",

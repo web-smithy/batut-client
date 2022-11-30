@@ -29,7 +29,11 @@ function UserMenu({ isUserMenuMedia = false }) {
 }
 
 UserMenu.propTypes = {
-  isUserMenuMedia: PropTypes.bool.isRequired,
+  isUserMenuMedia: PropTypes.bool,
+};
+
+UserMenu.defaultProps = {
+  isUserMenuMedia: false,
 };
 
 export default UserMenu;
