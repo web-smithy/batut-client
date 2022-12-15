@@ -1,8 +1,9 @@
-import "./style.scss";
-import step_1 from "../../assets/img/step_1.png";
-import step_2 from "../../assets/img/step_2.png";
-import step_3 from "../../assets/img/step_3.png";
-import WaveSecond from "../WaveSecond";
+import './style.scss';
+import React from 'react';
+import stepFirst from '../../assets/img/step_1.png';
+import stepSecond from '../../assets/img/step_2.png';
+import stepThird from '../../assets/img/step_3.png';
+import WaveSecond from '../WaveSecond';
 
 function Steps() {
   return (
@@ -14,7 +15,7 @@ function Steps() {
           <div className="steps__wrap">
             <div className="steps__item" data-aos="flip-up">
               <div className="steps__item-img">
-                <img src={step_1} />
+                <img src={stepFirst} alt="First step is to create user profile" />
               </div>
               <div className="steps__item-info">
                 <h3 className="title-h1 steps__item-info--title">Step 1</h3>
@@ -25,7 +26,7 @@ function Steps() {
             </div>
             <div className="steps__item" data-aos="flip-up">
               <div className="steps__item-img">
-                <img src={step_2} />
+                <img src={stepSecond} alt="Second step is access to profile" />
               </div>
               <div className="steps__item-info">
                 <h3 className="title-h1 steps__item-info--title">Step 2</h3>
@@ -37,7 +38,7 @@ function Steps() {
             </div>
             <div className="steps__item" data-aos="flip-up">
               <div className="steps__item-img">
-                <img src={step_3} />
+                <img src={stepThird} alt="Third step is choose challenge" />
               </div>
               <div className="steps__item-info">
                 <h3 className="title-h1 steps__item-info--title">Step 3</h3>

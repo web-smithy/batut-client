@@ -1,15 +1,15 @@
-import { useNavigate } from "react-router-dom";
-import React, { useContext, useEffect, useState } from "react";
-import { ContextUser } from "../../components/store/context";
-import Header from "../../components/Header";
-import Challenges from "../../components/Challenges";
-import User from "../../components/User";
-import Modal from "../../components/Modal";
-import Acceptances from "../../components/Acceptances";
+import { useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import ContextUser from '../../components/store/context';
+import Header from '../../components/Header';
+import Challenges from '../../components/Challenges';
+import User from '../../components/User';
+import Modal from '../../components/Modal';
+import Acceptances from '../../components/Acceptances';
 
 function Profile() {
-  let navigate = useNavigate();
-  const { user, setUser } = useContext(ContextUser);
+  const navigate = useNavigate();
+  const [user] = useContext(ContextUser);
   const [challenges, setChallenges] = useState([]);
   const [selectedChallenge, setSelectedChallenge] = useState(null);
   const [acceptances, setAcceptances] = useState([]);
@@ -17,25 +17,25 @@ function Profile() {
 
   useEffect(() => {
     if (!user) {
-      navigate("/");
+      navigate('/');
     }
 
     fetch(`${import.meta.env.VITE_API_URL}/api/acceptances`, {
       headers: new Headers({
-        "TG-AUTH": tgToken,
+        'TG-AUTH': tgToken,
       }),
     })
       .then((res) => res.json())
       .then((json) => {
         setAcceptances(json);
-        if (!json.some((acceptance) => acceptance.status === "in_progress")) {
+        if (!json.some((acceptance) => acceptance.status === 'in_progress')) {
           fetch(`${import.meta.env.VITE_API_URL}/api/challenges`, {
             headers: new Headers({
-              "TG-AUTH": tgToken,
+              'TG-AUTH': tgToken,
             }),
           })
-            .then((res) => res.json())
-            .then((json) => setChallenges(json));
+            .then((response) => response.json())
+            .then((res) => setChallenges(res));
         }
       });
   }, [selectedChallenge]);
@@ -50,7 +50,7 @@ function Profile() {
       ) : null}
       <Header />
       <User />
-      {acceptances.some((acceptance) => acceptance.status === "in_progress") ? (
+      {acceptances.some((acceptance) => acceptance.status === 'in_progress') ? (
         <Acceptances acceptances={acceptances} />
       ) : (
         <Challenges

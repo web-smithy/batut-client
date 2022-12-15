@@ -1,8 +1,9 @@
-import "./style.scss";
-import Logo from "../Logo";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTelegram } from "@fortawesome/free-brands-svg-icons";
-import WaveThrid from "../WaveThrid";
+import './style.scss';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTelegram } from '@fortawesome/free-brands-svg-icons';
+import Logo from '../Logo';
+import WaveThrid from '../WaveThrid';
 
 function Footer() {
   return (
@@ -17,7 +18,8 @@ function Footer() {
                 <FontAwesomeIcon
                   className="footer-telegram__icon"
                   icon={faTelegram}
-                />{" "}
+                />
+                {' '}
                 <a
                   className="footer-telegram__name"
                   href="https://t.me/MarinaKovaleva259"

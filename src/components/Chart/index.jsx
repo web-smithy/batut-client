@@ -1,18 +1,19 @@
-import "./style.scss";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Doughnut } from "react-chartjs-2";
-import { useState } from "react";
+import './style.scss';
+import PropTypes from 'prop-types';
+import {
+  Chart as ChartJS, ArcElement, Tooltip, Legend,
+} from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
+import React, { useState } from 'react';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function Chart({ notifications, days }) {
-  const [daysLeft, setDaysLeft] = useState(days - notifications.length);
+  const [daysLeft] = useState(days - notifications.length);
 
   const getCountByStatus = (status) => {
-    let arrayNotificationStatus = notifications.filter((notification) => {
-      return notification.status === status;
-    });
-    return arrayNotificationStatus.length;
+    const arrayNotifStatus = notifications.filter((notification) => notification.status === status);
+    return arrayNotifStatus.length;
   };
 
   const options = {
@@ -23,17 +24,17 @@ function Chart({ notifications, days }) {
     },
   };
   const data = {
-    labels: ["Fail", "Done", "Sent", "Left"],
+    labels: ['Fail', 'Done', 'Sent', 'Left'],
     datasets: [
       {
         data: [
-          getCountByStatus("fail"),
-          getCountByStatus("done"),
-          getCountByStatus("sent"),
+          getCountByStatus('fail'),
+          getCountByStatus('done'),
+          getCountByStatus('sent'),
           daysLeft,
         ],
-        backgroundColor: ["#F7464A", "#4BC0C0", "#FFCE56", "#CBD5E1"],
-        borderColor: ["#F7464A", "#4BC0C0", "#FFCE56", "#CBD5E1"],
+        backgroundColor: ['#F7464A', '#4BC0C0', '#FFCE56', '#CBD5E1'],
+        borderColor: ['#F7464A', '#4BC0C0', '#FFCE56', '#CBD5E1'],
         borderWidth: 1,
         cutout: 90,
       },
@@ -44,10 +45,22 @@ function Chart({ notifications, days }) {
     <div className="chart chart__relative">
       <Doughnut data={data} options={options} />
       <div className="chart__absolute">
-        <p className="chart__days">{daysLeft} days left</p>
+        <p className="chart__days">
+          {daysLeft}
+          {' '}
+          days left
+        </p>
       </div>
     </div>
   );
 }
+
+Chart.propTypes = {
+  days: PropTypes.number.isRequired,
+  notifications: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    status: PropTypes.string,
+  })).isRequired,
+};
 
 export default Chart;
