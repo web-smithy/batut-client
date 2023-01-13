@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: ['plugin:react/recommended', 'airbnb'],
   overrides: [],
@@ -11,6 +12,10 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'import/no-extraneous-dependencies': ['error', { devDependencies: ['vite.config.js'] }],
+    'import/no-extraneous-dependencies': [
+      'error',
+      { devDependencies: ['vite.config.js'] },
+    ],
+    quotes: [2, 'single', { avoidEscape: true }],
   },
 };

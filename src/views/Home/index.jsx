@@ -1,9 +1,7 @@
 import React from 'react';
 import AOS from 'aos';
-import Header from '../../components/Header';
-import Promo from '../../components/Promo';
+import MainPromo from '../../components/MainPromo';
 import Services from '../../components/Services';
-import AnimatedWave from '../../components/AnimatedWave';
 import WhatChallenges from '../../components/WhatChallenges';
 import Steps from '../../components/Steps';
 import Footer from '../../components/Footer';
@@ -16,13 +14,7 @@ AOS.init({
 function Home() {
   return (
     <>
-      <div className="main-wrapper">
-        <Header />
-        <main className="main">
-          <Promo />
-          <AnimatedWave />
-        </main>
-      </div>
+      <MainPromo />
       <Services />
       <WhatChallenges />
       <Steps />
