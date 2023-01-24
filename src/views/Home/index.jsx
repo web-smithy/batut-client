@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import AOS from 'aos';
 import MainPromo from '../../components/MainPromo';
 import Services from '../../components/Services';
@@ -12,12 +12,16 @@ AOS.init({
 });
 
 function Home() {
+  const servicesRef = useRef(null);
+  const aboutRef = useRef(null);
+  const detailsRef = useRef(null);
+
   return (
     <>
-      <MainPromo />
-      <Services />
-      <WhatChallenges />
-      <Steps />
+      <MainPromo servicesRef={servicesRef} aboutRef={aboutRef} detailsRef={detailsRef} />
+      <Services servicesRef={servicesRef} />
+      <WhatChallenges aboutRef={aboutRef} />
+      <Steps detailsRef={detailsRef} />
       <Footer />
     </>
   );

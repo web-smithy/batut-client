@@ -5,11 +5,11 @@ import stepSecond from '../../assets/img/step_2.png';
 import stepThird from '../../assets/img/step_3.png';
 import WaveSecond from '../WaveSecond';
 
-function Steps() {
+function Steps({ detailsRef }) {
   return (
     <>
       <WaveSecond />
-      <section className="steps" id="details">
+      <section className="steps" id="details" ref={detailsRef}>
         <div className="container">
           <h2 className="title-h2 steps__title">How it works?</h2>
           <div className="steps__wrap">

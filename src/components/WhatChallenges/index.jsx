@@ -3,11 +3,11 @@ import React from 'react';
 import bicycle from '../../assets/img/bicycle.svg';
 import WaveFirst from '../WaveFirst';
 
-function WhatChallenges() {
+function WhatChallenges({ aboutRef }) {
   return (
     <>
       <WaveFirst />
-      <section className="what-challenges" id="about">
+      <section className="what-challenges" id="about" ref={aboutRef}>
         <div className="container-large">
           <div className="what-challenges__wrap">
             <div className="what-challenges__img" data-aos="zoom-in-right">
