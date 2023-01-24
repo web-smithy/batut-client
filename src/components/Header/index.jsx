@@ -6,18 +6,11 @@ import Logo from '../Logo';
 import ContextUser from '../store/context';
 import UserMenu from '../UserMenu';
 import BurgerMenu from '../BurgerMenu';
+import { handleScroll } from '../helper/index';
 
 function Header({ servicesRef, aboutRef, detailsRef }) {
   const [user] = useContext(ContextUser);
   const location = useLocation();
-
-  const handleScroll = (ref) => {
-    window.scrollTo({
-      top: ref.offsetTop,
-      left: 0,
-      behavior: 'smooth',
-    });
-  };
 
   const menu = [
     {
@@ -57,7 +50,7 @@ function Header({ servicesRef, aboutRef, detailsRef }) {
               <Logo />
             </Link>
           </div>
-          <BurgerMenu />
+          <BurgerMenu servicesRef={servicesRef} aboutRef={aboutRef} detailsRef={detailsRef} />
           {location.pathname === '/' ? (
             <nav className="nav d--md">
               <ul className="menu-list flex">
