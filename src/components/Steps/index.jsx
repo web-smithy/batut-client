@@ -1,5 +1,6 @@
 import './style.scss';
 import React from 'react';
+import PropTypes from 'prop-types';
 import stepFirst from '../../assets/img/step_1.png';
 import stepSecond from '../../assets/img/step_2.png';
 import stepThird from '../../assets/img/step_3.png';
@@ -54,5 +55,15 @@ function Steps({ detailsRef }) {
     </>
   );
 }
+
+Steps.propTypes = {
+  detailsRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+};
+
+Steps.defaultProps = {
+  detailsRef: null,
+};
 
 export default Steps;

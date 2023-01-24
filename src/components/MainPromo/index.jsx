@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Header from '../Header';
 import Promo from '../Promo';
 import AnimatedWave from '../AnimatedWave';
@@ -14,5 +15,23 @@ function MainPromo({ servicesRef, aboutRef, detailsRef }) {
     </div>
   );
 }
+
+MainPromo.propTypes = {
+  servicesRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+  aboutRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+  detailsRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+};
+
+MainPromo.defaultProps = {
+  servicesRef: null,
+  aboutRef: null,
+  detailsRef: null,
+};
 
 export default MainPromo;

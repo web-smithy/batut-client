@@ -1,9 +1,8 @@
 import './style.scss';
-import { HashLink } from 'react-router-hash-link';
-import { Link, useLocation } from 'react-router-dom';
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '../Logo';
-import store from '../../../store.json';
 import ContextUser from '../store/context';
 import UserMenu from '../UserMenu';
 import BurgerMenu from '../BurgerMenu';
@@ -74,5 +73,23 @@ function Header({ servicesRef, aboutRef, detailsRef }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  servicesRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+  aboutRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+  detailsRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+};
+
+Header.defaultProps = {
+  servicesRef: null,
+  aboutRef: null,
+  detailsRef: null,
+};
 
 export default Header;

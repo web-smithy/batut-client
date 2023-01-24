@@ -1,5 +1,6 @@
 import './style.scss';
 import React from 'react';
+import PropTypes from 'prop-types';
 import bicycle from '../../assets/img/bicycle.svg';
 import WaveFirst from '../WaveFirst';
 
@@ -37,5 +38,15 @@ function WhatChallenges({ aboutRef }) {
     </>
   );
 }
+
+WhatChallenges.propTypes = {
+  aboutRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+};
+
+WhatChallenges.defaultProps = {
+  aboutRef: null,
+};
 
 export default WhatChallenges;
