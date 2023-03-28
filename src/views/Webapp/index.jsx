@@ -26,7 +26,7 @@ function Webapp() {
   const renderAcceptancesItem = (acceptance) => (
     <div key={acceptance.id} className="acceptances-item" style={{ borderRadius: '0' }}>
       <div className="acceptances-item__img">
-        <span style={{ fontSize: '30px' }}>{acceptance.emoji}</span>
+        <span style={{ fontSize: '30px', lineHeight: '32px' }}>{acceptance.emoji}</span>
       </div>
       <h4 className="title-h4 acceptances-item__title" style={{ fontSize: '30px' }}>{acceptance.name}</h4>
       <Chart notifications={acceptance.notifications} days={acceptance.days} />
