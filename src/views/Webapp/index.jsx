@@ -12,10 +12,6 @@ function Webapp() {
   const [acceptances, setAcceptances] = useState([]);
   const [selectedChallenge, setSelectedChallenge] = useState(null);
   useEffect(() => {
-    if (!user) {
-      navigate('/');
-    }
-
     fetch(`${import.meta.env.VITE_API_URL}/api/acceptances`, {
       headers: new Headers({
         'init-data': window.Telegram.WebApp.initData,
@@ -24,7 +20,7 @@ function Webapp() {
       .then((res) => res.json())
       .then((json) => {
         setAcceptances(json);
-      });
+      }).catch((error) => console.log(error));
   }, [selectedChallenge]);
 
   const renderAcceptancesItem = (acceptance) => (
