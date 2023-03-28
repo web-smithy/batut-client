@@ -1,16 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
-import ContextUser from '../../components/store/context';
 import Chart from '../../components/Chart';
 import formatTime from '../../components/helper/moment';
 
 function Webapp() {
-  const [user] = useContext(ContextUser);
-  const navigate = useNavigate();
   const [acceptances, setAcceptances] = useState([]);
-  const [selectedChallenge, setSelectedChallenge] = useState(null);
+
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/acceptances`, {
       headers: new Headers({
@@ -19,16 +15,20 @@ function Webapp() {
     })
       .then((res) => res.json())
       .then((json) => {
+        console.log('hello');
         setAcceptances(json);
-      }).catch((error) => console.log(error));
-  }, [selectedChallenge]);
+      })
+      .catch((error) => {
+        console.log('catch');
+      });
+  }, []);
 
   const renderAcceptancesItem = (acceptance) => (
-    <div key={acceptance.id} className="acceptances-item">
+    <div key={acceptance.id} className="acceptances-item" style={{ borderRadius: '0' }}>
       <div className="acceptances-item__img">
-        <span>{acceptance.emoji}</span>
+        <span style={{ fontSize: '30px' }}>{acceptance.emoji}</span>
       </div>
-      <h4 className="title-h4 acceptances-item__title">{acceptance.name}</h4>
+      <h4 className="title-h4 acceptances-item__title" style={{ fontSize: '30px' }}>{acceptance.name}</h4>
       <Chart notifications={acceptance.notifications} days={acceptance.days} />
       <p className="acceptances-item__txt">{acceptance.description}</p>
       <p className="acceptances-item__time">
@@ -45,7 +45,7 @@ function Webapp() {
   );
 
   return (
-    <div style={{ backgroundColor: 'blue', height: '100vh' }}>
+    <div className="bg-midnight" style={{ height: '100vh' }}>
       {acceptances
         .filter((acceptance) => acceptance.status === 'in_progress')
         .map(renderAcceptancesItem)}
