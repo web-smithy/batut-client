@@ -5,6 +5,7 @@ import { getUser } from './components/helper/index';
 import Home from './views/Home';
 import Profile from './views/Profile';
 import ErrorPage from './views/Error';
+import Webapp from './views/Webapp';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           {user && <Route path="/profile" element={<Profile />} />}
+          <Route path="/webapp" element={<Webapp />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </HashRouter>
