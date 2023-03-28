@@ -6,11 +6,11 @@ import formatTime from '../../components/helper/moment';
 
 function Webapp() {
   return (
-    <div className="acceptances-item">
+    <div className="acceptances-item" style={{ borderRadius: '0', height: '100vh' }}>
       <div className="acceptances-item__img">
-        <span>📚</span>
+        <span style={{ fontSize: '30px' }}>📚</span>
       </div>
-      <h4 className="title-h4 acceptances-item__title">Running</h4>
+      <h4 className="title-h4 acceptances-item__title" style={{ fontSize: '30px' }}>Running</h4>
       <Chart
         notifications={[
           { id: 1, status: 'sent' }]}
