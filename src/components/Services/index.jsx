@@ -1,5 +1,6 @@
 import './style.scss';
 import React from 'react';
+import PropTypes from 'prop-types';
 import clock from '../../assets/img/icon/clock.png';
 import add from '../../assets/img/icon/add.png';
 import chart from '../../assets/img/icon/chart.png';
@@ -7,7 +8,7 @@ import prize from '../../assets/img/icon/prize.png';
 import target from '../../assets/img/icon/target.png';
 import task from '../../assets/img/icon/task.png';
 
-function Services() {
+function Services({ servicesRef }) {
   const servicesItemInfo = [
     {
       id: 1,
@@ -48,7 +49,7 @@ function Services() {
   ];
 
   return (
-    <section className="services" id="services">
+    <section className="services" id="services" ref={servicesRef}>
       <div className="container">
         <h2 className="title-h2 services-title">Services</h2>
         <p className="services-txt">
@@ -77,5 +78,15 @@ function Services() {
     </section>
   );
 }
+
+Services.propTypes = {
+  servicesRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+};
+
+Services.defaultProps = {
+  servicesRef: null,
+};
 
 export default Services;

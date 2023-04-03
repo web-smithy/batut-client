@@ -1,13 +1,14 @@
 import './style.scss';
 import React from 'react';
+import PropTypes from 'prop-types';
 import bicycle from '../../assets/img/bicycle.svg';
 import WaveFirst from '../WaveFirst';
 
-function WhatChallenges() {
+function WhatChallenges({ aboutRef }) {
   return (
     <>
       <WaveFirst />
-      <section className="what-challenges" id="about">
+      <section className="what-challenges" id="about" ref={aboutRef}>
         <div className="container-large">
           <div className="what-challenges__wrap">
             <div className="what-challenges__img" data-aos="zoom-in-right">
@@ -37,5 +38,15 @@ function WhatChallenges() {
     </>
   );
 }
+
+WhatChallenges.propTypes = {
+  aboutRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+};
+
+WhatChallenges.defaultProps = {
+  aboutRef: null,
+};
 
 export default WhatChallenges;

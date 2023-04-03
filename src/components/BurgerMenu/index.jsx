@@ -1,14 +1,29 @@
 import './style.scss';
 import React, { useState } from 'react';
-import { HashLink } from 'react-router-hash-link';
-import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Link, useLocation } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import store from '../../../store.json';
 import UserMenu from '../UserMenu';
+import { handleScroll } from '../helper/index';
 
-function BurderMenu() {
+function BurderMenu({ servicesRef, aboutRef, detailsRef }) {
   const [isEnter, setIsEnter] = useState(false);
   const location = useLocation();
+
+  const menu = [
+    {
+      name: 'services',
+      ref: servicesRef,
+    },
+    {
+      name: 'about',
+      ref: aboutRef,
+    },
+    {
+      name: 'details',
+      ref: detailsRef,
+    },
+  ];
 
   const handleClick = () => {
     setIsEnter((value) => !value);
@@ -16,9 +31,15 @@ function BurderMenu() {
 
   const renderItemBurgerMenu = (item, i) => (
     <li key={i} className="menu-burger__item">
-      <HashLink className="menu-burger__item-link" to={`#${item}`}>
-        {item}
-      </HashLink>
+      <Link
+        className="menu-burger__item-link"
+        to={`#${item.name}`}
+        onClick={() => {
+          handleScroll(item.ref.current);
+        }}
+      >
+        {item.name}
+      </Link>
     </li>
   );
 
@@ -46,7 +67,7 @@ function BurderMenu() {
           {location.pathname === '/' ? (
             <div className="menu-burger__wrap">
               <ul className="menu-burger__list">
-                {store.menu.map(renderItemBurgerMenu)}
+                {menu.map(renderItemBurgerMenu)}
               </ul>
               <UserMenu />
             </div>
@@ -60,5 +81,23 @@ function BurderMenu() {
     </>
   );
 }
+
+BurderMenu.propTypes = {
+  servicesRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+  aboutRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+  detailsRef: PropTypes.shape(
+    { current: PropTypes.instanceOf(Element) },
+  ),
+};
+
+BurderMenu.defaultProps = {
+  servicesRef: null,
+  aboutRef: null,
+  detailsRef: null,
+};
 
 export default BurderMenu;

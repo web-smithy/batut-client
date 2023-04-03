@@ -9,4 +9,14 @@ const removeUser = () => {
   localStorage.removeItem('me');
 };
 
-export { getUser, addUserName, removeUser };
+const handleScroll = (ref) => {
+  window.scrollTo({
+    top: ref.offsetTop,
+    left: 0,
+    behavior: 'smooth',
+  });
+};
+
+export {
+  getUser, addUserName, removeUser, handleScroll,
+};
