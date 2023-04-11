@@ -15,11 +15,7 @@ function Webapp() {
     })
       .then((res) => res.json())
       .then((json) => {
-        console.log('hello');
         setAcceptances(json);
-      })
-      .catch((error) => {
-        console.log('catch');
       });
   }, []);
 
