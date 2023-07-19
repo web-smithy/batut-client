@@ -20,7 +20,7 @@ function Profile() {
       navigate('/');
     }
 
-    fetch(`${import.meta.env.VITE_API_URL}/api/acceptances`, {
+    fetch(`${import.meta.env.VITE_API_URL}/acceptances`, {
       headers: new Headers({
         'TG-AUTH': tgToken,
       }),
@@ -29,7 +29,7 @@ function Profile() {
       .then((json) => {
         setAcceptances(json);
         if (!json.some((acceptance) => acceptance.status === 'in_progress')) {
-          fetch(`${import.meta.env.VITE_API_URL}/api/challenges`, {
+          fetch(`${import.meta.env.VITE_API_URL}/challenges`, {
             headers: new Headers({
               'TG-AUTH': tgToken,
             }),
